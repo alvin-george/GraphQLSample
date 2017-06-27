@@ -12,9 +12,18 @@
 		18BC77911F0273E10019E202 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 18BC778F1F0273E10019E202 /* Main.storyboard */; };
 		18BC77931F0273E10019E202 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 18BC77921F0273E10019E202 /* Assets.xcassets */; };
 		18BC77961F0273E10019E202 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 18BC77941F0273E10019E202 /* LaunchScreen.storyboard */; };
+		18BC77A11F0276330019E202 /* AppModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18BC77A01F0276330019E202 /* AppModel.swift */; };
+		18BC77A41F0277190019E202 /* AppExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18BC77A31F0277190019E202 /* AppExtension.swift */; };
+		18BC77AC1F027D830019E202 /* schema.json in Resources */ = {isa = PBXBuildFile; fileRef = 18BC77AB1F027D830019E202 /* schema.json */; };
+		18BC77AE1F02842B0019E202 /* API.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18BC77AD1F02842B0019E202 /* API.swift */; };
+		18BC77B31F0287BC0019E202 /* Signup.graphql in Resources */ = {isa = PBXBuildFile; fileRef = 18BC77B21F0287BC0019E202 /* Signup.graphql */; };
+		18BC77B61F0297D70019E202 /* Login.graphql in Resources */ = {isa = PBXBuildFile; fileRef = 18BC77B51F0297D70019E202 /* Login.graphql */; };
+		18BC77B81F0299D50019E202 /* Login.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18BC77B71F0299D50019E202 /* Login.swift */; };
+		790CCAC8987588D0388147D5 /* Pods_GraphQLSample.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0EC6FFB7500FFAB637DD2BEF /* Pods_GraphQLSample.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		0EC6FFB7500FFAB637DD2BEF /* Pods_GraphQLSample.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_GraphQLSample.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		18BC77881F0273E10019E202 /* GraphQLSample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GraphQLSample.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		18BC778B1F0273E10019E202 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		18BC778D1F0273E10019E202 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -22,6 +31,15 @@
 		18BC77921F0273E10019E202 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		18BC77951F0273E10019E202 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		18BC77971F0273E10019E202 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		18BC77A01F0276330019E202 /* AppModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppModel.swift; sourceTree = "<group>"; };
+		18BC77A31F0277190019E202 /* AppExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppExtension.swift; sourceTree = "<group>"; };
+		18BC77AB1F027D830019E202 /* schema.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = schema.json; sourceTree = "<group>"; };
+		18BC77AD1F02842B0019E202 /* API.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = API.swift; sourceTree = "<group>"; };
+		18BC77B21F0287BC0019E202 /* Signup.graphql */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Signup.graphql; sourceTree = "<group>"; };
+		18BC77B51F0297D70019E202 /* Login.graphql */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Login.graphql; sourceTree = "<group>"; };
+		18BC77B71F0299D50019E202 /* Login.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Login.swift; sourceTree = "<group>"; };
+		43375D2F38BA154C58A32DAB /* Pods-GraphQLSample.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GraphQLSample.debug.xcconfig"; path = "Pods/Target Support Files/Pods-GraphQLSample/Pods-GraphQLSample.debug.xcconfig"; sourceTree = "<group>"; };
+		DD774D4F1840AC81638896FA /* Pods-GraphQLSample.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GraphQLSample.release.xcconfig"; path = "Pods/Target Support Files/Pods-GraphQLSample/Pods-GraphQLSample.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -29,6 +47,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				790CCAC8987588D0388147D5 /* Pods_GraphQLSample.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -40,6 +59,8 @@
 			children = (
 				18BC778A1F0273E10019E202 /* GraphQLSample */,
 				18BC77891F0273E10019E202 /* Products */,
+				E9F81F5D7F98B09EE1CD5C6F /* Pods */,
+				194F6366F7C84E8506A74B7F /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -54,6 +75,10 @@
 		18BC778A1F0273E10019E202 /* GraphQLSample */ = {
 			isa = PBXGroup;
 			children = (
+				18BC77B41F02934B0019E202 /* Schema */,
+				18BC77AF1F0286790019E202 /* GraphQL Files */,
+				18BC77A21F02770B0019E202 /* Helper */,
+				18BC779D1F0275460019E202 /* Model */,
 				18BC778B1F0273E10019E202 /* AppDelegate.swift */,
 				18BC778D1F0273E10019E202 /* ViewController.swift */,
 				18BC778F1F0273E10019E202 /* Main.storyboard */,
@@ -64,6 +89,58 @@
 			path = GraphQLSample;
 			sourceTree = "<group>";
 		};
+		18BC779D1F0275460019E202 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				18BC77AD1F02842B0019E202 /* API.swift */,
+				18BC77A01F0276330019E202 /* AppModel.swift */,
+				18BC77B71F0299D50019E202 /* Login.swift */,
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
+		18BC77A21F02770B0019E202 /* Helper */ = {
+			isa = PBXGroup;
+			children = (
+				18BC77A31F0277190019E202 /* AppExtension.swift */,
+			);
+			name = Helper;
+			sourceTree = "<group>";
+		};
+		18BC77AF1F0286790019E202 /* GraphQL Files */ = {
+			isa = PBXGroup;
+			children = (
+				18BC77B21F0287BC0019E202 /* Signup.graphql */,
+				18BC77B51F0297D70019E202 /* Login.graphql */,
+			);
+			name = "GraphQL Files";
+			sourceTree = "<group>";
+		};
+		18BC77B41F02934B0019E202 /* Schema */ = {
+			isa = PBXGroup;
+			children = (
+				18BC77AB1F027D830019E202 /* schema.json */,
+			);
+			name = Schema;
+			sourceTree = "<group>";
+		};
+		194F6366F7C84E8506A74B7F /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				0EC6FFB7500FFAB637DD2BEF /* Pods_GraphQLSample.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		E9F81F5D7F98B09EE1CD5C6F /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				43375D2F38BA154C58A32DAB /* Pods-GraphQLSample.debug.xcconfig */,
+				DD774D4F1840AC81638896FA /* Pods-GraphQLSample.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -71,9 +148,13 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 18BC779A1F0273E10019E202 /* Build configuration list for PBXNativeTarget "GraphQLSample" */;
 			buildPhases = (
+				2F9C6D88F29826E699D0F13F /* [CP] Check Pods Manifest.lock */,
+				18BC77AA1F027BE20019E202 /* Generate Apollo GraphQL API */,
 				18BC77841F0273E10019E202 /* Sources */,
 				18BC77851F0273E10019E202 /* Frameworks */,
 				18BC77861F0273E10019E202 /* Resources */,
+				99EF5BF5A9A9EDE9550F3E2F /* [CP] Embed Pods Frameworks */,
+				4CA78C528D688F66426BB86E /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -123,6 +204,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				18BC77AC1F027D830019E202 /* schema.json in Resources */,
+				18BC77B61F0297D70019E202 /* Login.graphql in Resources */,
+				18BC77B31F0287BC0019E202 /* Signup.graphql in Resources */,
 				18BC77961F0273E10019E202 /* LaunchScreen.storyboard in Resources */,
 				18BC77931F0273E10019E202 /* Assets.xcassets in Resources */,
 				18BC77911F0273E10019E202 /* Main.storyboard in Resources */,
@@ -131,6 +215,68 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		18BC77AA1F027BE20019E202 /* Generate Apollo GraphQL API */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Generate Apollo GraphQL API";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "APOLLO_FRAMEWORK_PATH=\"$(eval find $FRAMEWORK_SEARCH_PATHS -name \"Apollo.framework\" -maxdepth 1)\"\n\nif [ -z \"$APOLLO_FRAMEWORK_PATH\" ]; then\necho \"error: Couldn't find Apollo.framework in FRAMEWORK_SEARCH_PATHS; make sure to add the framework to your project.\"\nexit 1\nfi\n\ncd \"${SRCROOT}/${TARGET_NAME}\"\n$APOLLO_FRAMEWORK_PATH/check-and-run-apollo-codegen.sh generate $(find . -name '*.graphql') --schema schema.json --output API.swift";
+		};
+		2F9C6D88F29826E699D0F13F /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		4CA78C528D688F66426BB86E /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-GraphQLSample/Pods-GraphQLSample-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		99EF5BF5A9A9EDE9550F3E2F /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-GraphQLSample/Pods-GraphQLSample-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		18BC77841F0273E10019E202 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -138,6 +284,10 @@
 			files = (
 				18BC778E1F0273E10019E202 /* ViewController.swift in Sources */,
 				18BC778C1F0273E10019E202 /* AppDelegate.swift in Sources */,
+				18BC77A41F0277190019E202 /* AppExtension.swift in Sources */,
+				18BC77B81F0299D50019E202 /* Login.swift in Sources */,
+				18BC77A11F0276330019E202 /* AppModel.swift in Sources */,
+				18BC77AE1F02842B0019E202 /* API.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -258,6 +408,7 @@
 		};
 		18BC779B1F0273E10019E202 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 43375D2F38BA154C58A32DAB /* Pods-GraphQLSample.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = GraphQLSample/Info.plist;
@@ -270,6 +421,7 @@
 		};
 		18BC779C1F0273E10019E202 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = DD774D4F1840AC81638896FA /* Pods-GraphQLSample.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = GraphQLSample/Info.plist;
@@ -299,6 +451,7 @@
 				18BC779C1F0273E10019E202 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

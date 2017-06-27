@@ -7,6 +7,10 @@
 //
 
 import UIKit
+import Apollo
+
+let graphQLEndPoint = "http://52.88.217.19/graphql"
+let apollo = ApolloClient(url: URL(string: graphQLEndPoint)!)
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {

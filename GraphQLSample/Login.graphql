@@ -1,0 +1,9 @@
+mutation userLogin($civilId:String!, $password :String!){
+userLogin(civilId:$civilID, password :$password){
+id
+fullName
+userCategory
+token
+
+}
+}
