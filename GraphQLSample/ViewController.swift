@@ -39,7 +39,7 @@ class ViewController: UIViewController {
         
         let timeStamp = ""
         
-        let signUpMutation = SignUpMutation(fullname: (fullname.trimString()), email: (email.trimString()), mobile: (mobile.trimString()), civilId: (civilId.trimString()), password: (password.trimString()), address: (address.trimString()), city: (city.trimString()), state: (state.trimString()), country: (country.trimString()), zipcode: (zipcode.trimString()), timestamp: timeStamp, usercategory: "parent")
+        let signUpMutation = UserSignupMutation(fullName: (fullname.trimString()), emailId: (email.trimString()), mobileNumber: (mobile.trimString()), civilId: (civilId.trimString()), password: (password.trimString()), address: (address.trimString()), city: (city.trimString()), state: (state.trimString()), country: (country.trimString()), zipCode: (zipcode.trimString()), timeStamp: timeStamp, userCategory: "parent")
      
         
         apollo.perform(mutation: signUpMutation) {  [weak self] result, error in
@@ -74,19 +74,19 @@ class ViewController: UIViewController {
     
     @IBAction func loginUserButtonClicked(_ sender: Any) {
         
-        let loginMutation = LoginMutation(civilId: "student123", password: "student123")
+        let loginMutation = UserLoginMutation(civilId: "student123", password: "student123")
         
         apollo.perform(mutation: loginMutation) {  [weak self] result, error in
             DispatchQueue.main.async(execute: {() -> Void in
                 
                 print("Result :\(result)")
                 
-                let fullname = result?.data?.userSignup?.fullName
+                let fullname = result?.data?.userLogin?.fullName
                 
                 
                 
                 //here is the result
-                self?.responseTextView.text = String(describing: result?.data?.userSignup)
+                self?.responseTextView.text = String(describing: result?.data?.userLogin)
                 
                 if let error = error {
                     print(error.localizedDescription)
@@ -94,11 +94,6 @@ class ViewController: UIViewController {
                     
                     return
                 }
-                
-                let token = result?.data?.userSignup?.token
-                UserDefaults.standard.set(token, forKey: "token")
-                
-                print(token)
                 
             })
             

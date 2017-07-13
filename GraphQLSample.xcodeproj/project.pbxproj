@@ -18,7 +18,6 @@
 		18BC77AE1F02842B0019E202 /* API.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18BC77AD1F02842B0019E202 /* API.swift */; };
 		18BC77B31F0287BC0019E202 /* Signup.graphql in Resources */ = {isa = PBXBuildFile; fileRef = 18BC77B21F0287BC0019E202 /* Signup.graphql */; };
 		18BC77B61F0297D70019E202 /* Login.graphql in Resources */ = {isa = PBXBuildFile; fileRef = 18BC77B51F0297D70019E202 /* Login.graphql */; };
-		18BC77B81F0299D50019E202 /* Login.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18BC77B71F0299D50019E202 /* Login.swift */; };
 		790CCAC8987588D0388147D5 /* Pods_GraphQLSample.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0EC6FFB7500FFAB637DD2BEF /* Pods_GraphQLSample.framework */; };
 /* End PBXBuildFile section */
 
@@ -37,7 +36,6 @@
 		18BC77AD1F02842B0019E202 /* API.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = API.swift; sourceTree = "<group>"; };
 		18BC77B21F0287BC0019E202 /* Signup.graphql */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Signup.graphql; sourceTree = "<group>"; };
 		18BC77B51F0297D70019E202 /* Login.graphql */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Login.graphql; sourceTree = "<group>"; };
-		18BC77B71F0299D50019E202 /* Login.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Login.swift; sourceTree = "<group>"; };
 		43375D2F38BA154C58A32DAB /* Pods-GraphQLSample.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GraphQLSample.debug.xcconfig"; path = "Pods/Target Support Files/Pods-GraphQLSample/Pods-GraphQLSample.debug.xcconfig"; sourceTree = "<group>"; };
 		DD774D4F1840AC81638896FA /* Pods-GraphQLSample.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GraphQLSample.release.xcconfig"; path = "Pods/Target Support Files/Pods-GraphQLSample/Pods-GraphQLSample.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -94,7 +92,6 @@
 			children = (
 				18BC77AD1F02842B0019E202 /* API.swift */,
 				18BC77A01F0276330019E202 /* AppModel.swift */,
-				18BC77B71F0299D50019E202 /* Login.swift */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -177,6 +174,7 @@
 				TargetAttributes = {
 					18BC77871F0273E10019E202 = {
 						CreatedOnToolsVersion = 8.3.2;
+						DevelopmentTeam = G8K2Q4JU8U;
 						ProvisioningStyle = Automatic;
 					};
 				};
@@ -285,7 +283,6 @@
 				18BC778E1F0273E10019E202 /* ViewController.swift in Sources */,
 				18BC778C1F0273E10019E202 /* AppDelegate.swift in Sources */,
 				18BC77A41F0277190019E202 /* AppExtension.swift in Sources */,
-				18BC77B81F0299D50019E202 /* Login.swift in Sources */,
 				18BC77A11F0276330019E202 /* AppModel.swift in Sources */,
 				18BC77AE1F02842B0019E202 /* API.swift in Sources */,
 			);
@@ -411,6 +408,7 @@
 			baseConfigurationReference = 43375D2F38BA154C58A32DAB /* Pods-GraphQLSample.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = G8K2Q4JU8U;
 				INFOPLIST_FILE = GraphQLSample/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = mkumar.GraphQLSample;
@@ -424,6 +422,7 @@
 			baseConfigurationReference = DD774D4F1840AC81638896FA /* Pods-GraphQLSample.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = G8K2Q4JU8U;
 				INFOPLIST_FILE = GraphQLSample/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = mkumar.GraphQLSample;

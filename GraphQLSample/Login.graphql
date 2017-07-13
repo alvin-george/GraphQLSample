@@ -1,5 +1,5 @@
 mutation userLogin($civilId:String!, $password :String!){
-userLogin(civilId:$civilID, password :$password){
+userLogin(civilId:$civilId, password :$password){
 id
 fullName
 userCategory

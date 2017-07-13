@@ -26,13 +26,13 @@ struct LoginResponse {
     let fullname : String
     let userCategory: String
     let id: String
-    let token: String
+  
     
-    init(fullname: String, userCat: String, id: String,token : token) {
+    init(fullname: String, userCat: String, id: String) {
         self.fullname = fullname
         self.userCategory = userCat
         self.id = id
-        self.token = token
+       // self.token = token
         
     }
 }
