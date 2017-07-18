@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Apollo
 
 class ViewController: UIViewController {
     
@@ -24,6 +25,10 @@ class ViewController: UIViewController {
     var zipcode = "1234"
     var timestamp = ""
     var usercategory = ""
+    
+    
+    var tokenAfterLogin:String?
+    var currentUserId:String?
     
     @IBOutlet var responseTextView: UITextView!
     @IBOutlet weak var moveToProfileButton: UIButton!
@@ -64,7 +69,6 @@ class ViewController: UIViewController {
                 let fullname = result?.data?.userSignup?.fullName
                 
                 
-                
                 //here is the result
                 self?.responseTextView.text = String(describing: result?.data?.userSignup)
                 
@@ -96,6 +100,8 @@ class ViewController: UIViewController {
                 print("Result :\(result)")
                 
                 let fullname = result?.data?.userLogin?.fullName
+                self?.tokenAfterLogin =  result?.data?.userLogin?.token
+                self?.currentUserId =  result?.data?.userLogin?.id
                 
                 self?.enableMoveToProfileButton()
                 
@@ -125,8 +131,13 @@ class ViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
-    
-    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        
+        if let secondController = segue.destination as? SecondViewController {
+            secondController.serverToken =  tokenAfterLogin
+            secondController.currentUsedId =  self.currentUserId
+        }
+    }
     
 }
 

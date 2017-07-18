@@ -7,24 +7,23 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		186C1CDF1F1E08FE009E0E85 /* SecondViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 186C1CDE1F1E08FE009E0E85 /* SecondViewController.swift */; };
-		18BC778C1F0273E10019E202 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18BC778B1F0273E10019E202 /* AppDelegate.swift */; };
-		18BC778E1F0273E10019E202 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18BC778D1F0273E10019E202 /* ViewController.swift */; };
-		18BC77911F0273E10019E202 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 18BC778F1F0273E10019E202 /* Main.storyboard */; };
-		18BC77931F0273E10019E202 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 18BC77921F0273E10019E202 /* Assets.xcassets */; };
-		18BC77961F0273E10019E202 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 18BC77941F0273E10019E202 /* LaunchScreen.storyboard */; };
-		18BC77A11F0276330019E202 /* AppModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18BC77A01F0276330019E202 /* AppModel.swift */; };
-		18BC77A41F0277190019E202 /* AppExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18BC77A31F0277190019E202 /* AppExtension.swift */; };
-		18BC77AC1F027D830019E202 /* schema.json in Resources */ = {isa = PBXBuildFile; fileRef = 18BC77AB1F027D830019E202 /* schema.json */; };
-		18BC77AE1F02842B0019E202 /* API.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18BC77AD1F02842B0019E202 /* API.swift */; };
-		18BC77B31F0287BC0019E202 /* Signup.graphql in Resources */ = {isa = PBXBuildFile; fileRef = 18BC77B21F0287BC0019E202 /* Signup.graphql */; };
-		18BC77B61F0297D70019E202 /* Login.graphql in Resources */ = {isa = PBXBuildFile; fileRef = 18BC77B51F0297D70019E202 /* Login.graphql */; };
+		186C1CE61F1E1CD5009E0E85 /* API.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18BC77AD1F02842B0019E202 /* API.swift */; };
+		186C1CE71F1E1CF4009E0E85 /* AppExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18BC77A31F0277190019E202 /* AppExtension.swift */; };
+		186C1CE81F1E1CF7009E0E85 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18BC778B1F0273E10019E202 /* AppDelegate.swift */; };
+		186C1CE91F1E1CFA009E0E85 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18BC778D1F0273E10019E202 /* ViewController.swift */; };
+		186C1CEA1F1E1CFD009E0E85 /* SecondViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 186C1CDE1F1E08FE009E0E85 /* SecondViewController.swift */; };
+		186C1CEB1F1E1D01009E0E85 /* AppModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18BC77A01F0276330019E202 /* AppModel.swift */; };
+		186C1CED1F1E2146009E0E85 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 18BC77921F0273E10019E202 /* Assets.xcassets */; };
+		186C1CEE1F1E214A009E0E85 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 18BC77941F0273E10019E202 /* LaunchScreen.storyboard */; };
+		186C1CEF1F1E214E009E0E85 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 18BC778F1F0273E10019E202 /* Main.storyboard */; };
+		186C1CF11F1E2188009E0E85 /* StudentProfile.graphql in Resources */ = {isa = PBXBuildFile; fileRef = 186C1CF01F1E2188009E0E85 /* StudentProfile.graphql */; };
 		790CCAC8987588D0388147D5 /* Pods_GraphQLSample.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0EC6FFB7500FFAB637DD2BEF /* Pods_GraphQLSample.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		0EC6FFB7500FFAB637DD2BEF /* Pods_GraphQLSample.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_GraphQLSample.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		186C1CDE1F1E08FE009E0E85 /* SecondViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SecondViewController.swift; sourceTree = "<group>"; };
+		186C1CF01F1E2188009E0E85 /* StudentProfile.graphql */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = StudentProfile.graphql; sourceTree = "<group>"; };
 		18BC77881F0273E10019E202 /* GraphQLSample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GraphQLSample.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		18BC778B1F0273E10019E202 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		18BC778D1F0273E10019E202 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -118,6 +117,7 @@
 		18BC77AF1F0286790019E202 /* GraphQL Files */ = {
 			isa = PBXGroup;
 			children = (
+				186C1CF01F1E2188009E0E85 /* StudentProfile.graphql */,
 				18BC77B21F0287BC0019E202 /* Signup.graphql */,
 				18BC77B51F0297D70019E202 /* Login.graphql */,
 			);
@@ -158,11 +158,11 @@
 			buildPhases = (
 				2F9C6D88F29826E699D0F13F /* [CP] Check Pods Manifest.lock */,
 				18BC77AA1F027BE20019E202 /* Generate Apollo GraphQL API */,
-				18BC77841F0273E10019E202 /* Sources */,
+				186C1CE51F1E1CCB009E0E85 /* Sources */,
 				18BC77851F0273E10019E202 /* Frameworks */,
-				18BC77861F0273E10019E202 /* Resources */,
 				99EF5BF5A9A9EDE9550F3E2F /* [CP] Embed Pods Frameworks */,
 				4CA78C528D688F66426BB86E /* [CP] Copy Pods Resources */,
+				186C1CEC1F1E2133009E0E85 /* Resources */,
 			);
 			buildRules = (
 			);
@@ -209,16 +209,14 @@
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
-		18BC77861F0273E10019E202 /* Resources */ = {
+		186C1CEC1F1E2133009E0E85 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				18BC77AC1F027D830019E202 /* schema.json in Resources */,
-				18BC77B61F0297D70019E202 /* Login.graphql in Resources */,
-				18BC77B31F0287BC0019E202 /* Signup.graphql in Resources */,
-				18BC77961F0273E10019E202 /* LaunchScreen.storyboard in Resources */,
-				18BC77931F0273E10019E202 /* Assets.xcassets in Resources */,
-				18BC77911F0273E10019E202 /* Main.storyboard in Resources */,
+				186C1CEF1F1E214E009E0E85 /* Main.storyboard in Resources */,
+				186C1CEE1F1E214A009E0E85 /* LaunchScreen.storyboard in Resources */,
+				186C1CED1F1E2146009E0E85 /* Assets.xcassets in Resources */,
+				186C1CF11F1E2188009E0E85 /* StudentProfile.graphql in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -287,16 +285,16 @@
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
-		18BC77841F0273E10019E202 /* Sources */ = {
+		186C1CE51F1E1CCB009E0E85 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				186C1CDF1F1E08FE009E0E85 /* SecondViewController.swift in Sources */,
-				18BC778E1F0273E10019E202 /* ViewController.swift in Sources */,
-				18BC778C1F0273E10019E202 /* AppDelegate.swift in Sources */,
-				18BC77A41F0277190019E202 /* AppExtension.swift in Sources */,
-				18BC77A11F0276330019E202 /* AppModel.swift in Sources */,
-				18BC77AE1F02842B0019E202 /* API.swift in Sources */,
+				186C1CEB1F1E1D01009E0E85 /* AppModel.swift in Sources */,
+				186C1CEA1F1E1CFD009E0E85 /* SecondViewController.swift in Sources */,
+				186C1CE91F1E1CFA009E0E85 /* ViewController.swift in Sources */,
+				186C1CE81F1E1CF7009E0E85 /* AppDelegate.swift in Sources */,
+				186C1CE71F1E1CF4009E0E85 /* AppExtension.swift in Sources */,
+				186C1CE61F1E1CD5009E0E85 /* API.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -425,6 +423,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = mkumar.GraphQLSample;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
@@ -439,6 +438,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = mkumar.GraphQLSample;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 3.0;
 			};
 			name = Release;

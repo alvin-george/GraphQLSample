@@ -127,3 +127,99 @@ public final class UserSignupMutation: GraphQLMutation {
     }
   }
 }
+
+public final class StudentProfileQuery: GraphQLQuery {
+  public static let operationDefinition =
+    "query StudentProfile {" +
+    "  me {" +
+    "    __typename" +
+    "    ... on Student {" +
+    "      __typename" +
+    "      profile {" +
+    "        __typename" +
+    "        fullName" +
+    "        emailId" +
+    "        mobileNumber" +
+    "        civilId" +
+    "        address" +
+    "        city" +
+    "        state" +
+    "        country" +
+    "        zipCode" +
+    "        userProfilePic" +
+    "        userCategory" +
+    "        createdAt" +
+    "        updatedAt" +
+    "      }" +
+    "    }" +
+    "  }" +
+    "}"
+  public init() {
+  }
+
+  public struct Data: GraphQLMappable {
+    public let me: Me?
+
+    public init(reader: GraphQLResultReader) throws {
+      me = try reader.optionalValue(for: Field(responseName: "me"))
+    }
+
+    public struct Me: GraphQLMappable {
+      public let __typename: String
+
+      public let asStudent: AsStudent?
+
+      public init(reader: GraphQLResultReader) throws {
+        __typename = try reader.value(for: Field(responseName: "__typename"))
+
+        asStudent = try AsStudent(reader: reader, ifTypeMatches: __typename)
+      }
+
+      public struct AsStudent: GraphQLConditionalFragment {
+        public static let possibleTypes = ["Student"]
+
+        public let __typename: String
+        public let profile: Profile?
+
+        public init(reader: GraphQLResultReader) throws {
+          __typename = try reader.value(for: Field(responseName: "__typename"))
+          profile = try reader.optionalValue(for: Field(responseName: "profile"))
+        }
+
+        public struct Profile: GraphQLMappable {
+          public let __typename: String
+          public let fullName: String?
+          public let emailId: String?
+          public let mobileNumber: String?
+          public let civilId: String?
+          public let address: String?
+          public let city: String?
+          public let state: String?
+          public let country: String?
+          public let zipCode: Int?
+          public let userProfilePic: String?
+          public let userCategory: String?
+          public let createdAt: String?
+          public let updatedAt: String?
+
+          public init(reader: GraphQLResultReader) throws {
+            __typename = try reader.value(for: Field(responseName: "__typename"))
+            fullName = try reader.optionalValue(for: Field(responseName: "fullName"))
+            emailId = try reader.optionalValue(for: Field(responseName: "emailId"))
+            mobileNumber = try reader.optionalValue(for: Field(responseName: "mobileNumber"))
+            civilId = try reader.optionalValue(for: Field(responseName: "civilId"))
+            address = try reader.optionalValue(for: Field(responseName: "address"))
+            city = try reader.optionalValue(for: Field(responseName: "city"))
+            state = try reader.optionalValue(for: Field(responseName: "state"))
+            country = try reader.optionalValue(for: Field(responseName: "country"))
+            zipCode = try reader.optionalValue(for: Field(responseName: "zipCode"))
+            userProfilePic = try reader.optionalValue(for: Field(responseName: "userProfilePic"))
+            userCategory = try reader.optionalValue(for: Field(responseName: "userCategory"))
+            createdAt = try reader.optionalValue(for: Field(responseName: "createdAt"))
+            updatedAt = try reader.optionalValue(for: Field(responseName: "updatedAt"))
+          }
+        }
+      }
+    }
+  }
+}

@@ -112,30 +112,47 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="profile_cover" translatesAutoresizingMaskIntoConstraints="NO" id="MCY-13-pNs">
-                                <rect key="frame" x="137.5" y="30" width="100" height="100"/>
+                                <rect key="frame" x="137.5" y="134" width="100" height="100"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="100" id="GhB-mo-xb7"/>
-                                    <constraint firstAttribute="height" constant="100" id="ohA-sn-6r9"/>
+                                    <constraint firstAttribute="width" constant="100" id="546-56-nKz"/>
+                                    <constraint firstAttribute="height" constant="100" id="xIN-pq-3Bi"/>
                                 </constraints>
                             </imageView>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="Here we show Profile Details" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="8in-Fg-LL7">
-                                <rect key="frame" x="20" y="150" width="335" height="497"/>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" text="Here we show Profile Details" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="8in-Fg-LL7">
+                                <rect key="frame" x="20" y="244" width="335" height="403"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="r10-V0-eDM">
+                                <rect key="frame" x="137.5" y="50" width="100" height="45"/>
+                                <color key="backgroundColor" red="0.31476861239999998" green="0.41043370959999997" blue="0.75971758369999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="45" id="egY-IJ-Dfg"/>
+                                    <constraint firstAttribute="width" constant="100" id="rqc-4Q-dYQ"/>
+                                </constraints>
+                                <state key="normal" title="Fetch Profile">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="fetchProfileClicked:" destination="xTp-ty-ZFS" eventType="touchUpInside" id="LcO-Vo-v7Z"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="MCY-13-pNs" firstAttribute="centerX" secondItem="yRk-XW-rC7" secondAttribute="centerX" id="JGp-ts-cdk"/>
+                            <constraint firstItem="MCY-13-pNs" firstAttribute="top" secondItem="r10-V0-eDM" secondAttribute="bottom" constant="39" id="3K1-jf-xEX"/>
+                            <constraint firstItem="r10-V0-eDM" firstAttribute="centerX" secondItem="yRk-XW-rC7" secondAttribute="centerX" id="Ndo-aE-jXX"/>
                             <constraint firstAttribute="trailing" secondItem="8in-Fg-LL7" secondAttribute="trailing" constant="20" id="OTT-to-6uG"/>
+                            <constraint firstItem="r10-V0-eDM" firstAttribute="top" secondItem="crW-Z6-WJG" secondAttribute="bottom" constant="30" id="aBd-wf-x8N"/>
                             <constraint firstItem="8in-Fg-LL7" firstAttribute="leading" secondItem="yRk-XW-rC7" secondAttribute="leading" constant="20" id="bIn-Y0-QmY"/>
                             <constraint firstItem="wzD-Pd-vdn" firstAttribute="top" secondItem="8in-Fg-LL7" secondAttribute="bottom" constant="20" id="cmb-6Y-JCD"/>
-                            <constraint firstItem="8in-Fg-LL7" firstAttribute="top" secondItem="MCY-13-pNs" secondAttribute="bottom" constant="20" id="fDF-UO-vNf"/>
-                            <constraint firstItem="MCY-13-pNs" firstAttribute="top" secondItem="crW-Z6-WJG" secondAttribute="bottom" constant="10" id="hcp-hM-gvd"/>
+                            <constraint firstItem="8in-Fg-LL7" firstAttribute="top" secondItem="MCY-13-pNs" secondAttribute="bottom" constant="10" id="vS7-ya-3N8"/>
+                            <constraint firstItem="MCY-13-pNs" firstAttribute="centerX" secondItem="yRk-XW-rC7" secondAttribute="centerX" id="zTZ-Ee-ClJ"/>
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="fetchButton" destination="r10-V0-eDM" id="2Vp-hM-ZAa"/>
                         <outlet property="profileDetailsTextView" destination="8in-Fg-LL7" id="39C-cj-iFa"/>
                         <outlet property="profileImage" destination="MCY-13-pNs" id="5CE-z7-oPj"/>
                     </connections>

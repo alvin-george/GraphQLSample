@@ -1,0 +1,31 @@
+
+query StudentProfile {
+
+me{
+
+... on Student {
+profile {
+
+
+fullName
+emailId
+mobileNumber
+civilId
+address
+city
+state
+country
+zipCode
+userProfilePic
+userCategory
+createdAt
+updatedAt
+}
+
+}
+}
+
+}
+
+
+
