@@ -26,12 +26,26 @@ class ViewController: UIViewController {
     var usercategory = ""
     
     @IBOutlet var responseTextView: UITextView!
+    @IBOutlet weak var moveToProfileButton: UIButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         
     }
+    override func viewWillAppear(_ animated: Bool) {
+ 
+        disableMoveToProfileButton()
+    }
+    func disableMoveToProfileButton(){
+        moveToProfileButton.isEnabled =  false
+        moveToProfileButton.alpha = 0.3
+    }
+    func enableMoveToProfileButton(){
+        moveToProfileButton.isEnabled =  true
+        moveToProfileButton.alpha = 1.0
+    }
+    
    
     @IBAction func actionSignUp(_ sender: Any) {
         
@@ -83,7 +97,7 @@ class ViewController: UIViewController {
                 
                 let fullname = result?.data?.userLogin?.fullName
                 
-                
+                self?.enableMoveToProfileButton()
                 
                 //here is the result
                 self?.responseTextView.text = String(describing: result?.data?.userLogin)
@@ -102,10 +116,16 @@ class ViewController: UIViewController {
         
     }
     
+    @IBAction func moveToProfileButtonClicked(_ sender: Any) {
+        
+        self.performSegue(withIdentifier: "segueToSecondViewController", sender: self)
+    }
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
+    
+    
     
     
 }
