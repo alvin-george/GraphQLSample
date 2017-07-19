@@ -187,3 +187,63 @@ public final class StudentProfileQuery: GraphQLQuery {
     }
   }
 }
+
+public final class TeacherProfileQuery: GraphQLQuery {
+  public static let operationDefinition =
+    "query TeacherProfile {" +
+    "  me {" +
+    "    __typename" +
+    "    ... on Teacher {" +
+    "      __typename" +
+    "      profile {" +
+    "        __typename" +
+    "        city" +
+    "      }" +
+    "    }" +
+    "  }" +
+    "}"
+  public init() {
+  }
+
+  public struct Data: GraphQLMappable {
+    public let me: Me?
+
+    public init(reader: GraphQLResultReader) throws {
+      me = try reader.optionalValue(for: Field(responseName: "me"))
+    }
+
+    public struct Me: GraphQLMappable {
+      public let __typename: String
+
+      public let asTeacher: AsTeacher?
+
+      public init(reader: GraphQLResultReader) throws {
+        __typename = try reader.value(for: Field(responseName: "__typename"))
+
+        asTeacher = try AsTeacher(reader: reader, ifTypeMatches: __typename)
+      }
+
+      public struct AsTeacher: GraphQLConditionalFragment {
+        public static let possibleTypes = ["Teacher"]
+
+        public let __typename: String
+        public let profile: Profile?
+
+        public init(reader: GraphQLResultReader) throws {
+          __typename = try reader.value(for: Field(responseName: "__typename"))
+          profile = try reader.optionalValue(for: Field(responseName: "profile"))
+        }
+
+        public struct Profile: GraphQLMappable {
+          public let __typename: String
+          public let city: String?
+
+          public init(reader: GraphQLResultReader) throws {
+            __typename = try reader.value(for: Field(responseName: "__typename"))
+            city = try reader.optionalValue(for: Field(responseName: "city"))
+          }
+        }
+      }
+    }
+  }
+}

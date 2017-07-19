@@ -174,6 +174,7 @@ private final class FetchQueryOperation<Query: GraphQLQuery>: AsynchronousOperat
       return
     }
     
+    
     client.store.load(query: query, cacheKeyForObject: client.cacheKeyForObject) { (result, error) in
       if error == nil {
         self.notifyResultHandler(result: result, error: nil)

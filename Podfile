@@ -6,6 +6,6 @@ target 'GraphQLSample' do
 use_frameworks!
 
 pod 'Apollo'
-
+pod 'Alamofire', '~> 4.4'
 
 end

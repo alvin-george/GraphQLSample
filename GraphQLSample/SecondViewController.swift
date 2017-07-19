@@ -8,6 +8,7 @@
 
 import UIKit
 import Apollo
+import Alamofire
 
 class SecondViewController: UIViewController {
     
@@ -15,103 +16,43 @@ class SecondViewController: UIViewController {
     var currentUsedId:String?
     
     var apolloWithToken:ApolloClient?
-
+    
     
     @IBOutlet weak var profileImage: UIImageView!
     @IBOutlet weak var profileDetailsTextView: UITextView!
-    
     @IBOutlet weak var fetchButton: UIButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        let tokenString = "Bearer " +  serverToken!
-        
-        apolloWithToken = {
-            let configuration = URLSessionConfiguration.default
-            
-            configuration.httpAdditionalHeaders = ["Authorization": tokenString]
-            
-            let url = URL(string: graphQLEndPoint)!
-            
-            print("new url : \(url)")
-            
-            return ApolloClient(networkTransport: HTTPNetworkTransport(url: url, configuration: configuration))
-        }()
         
     }
     override func viewWillAppear(_ animated: Bool) {
         
     }
     
-    func fetchStudentProfileDetails(){
+    @IBAction func fetchProfileClicked(_ sender: Any) {
         
-        let tokenString = "Bearer " +  serverToken!
+        let tokenString = "Bearer " + serverToken!
         
-        print(tokenString)
-
-        let newApollo: ApolloClient = {
+        let new_apollo: ApolloClient = {
             let configuration = URLSessionConfiguration.default
             // Add additional headers as needed
-            configuration.httpAdditionalHeaders = ["Authorization": "Bearer \(serverToken)"]
-            configuration.requestCachePolicy = .reloadIgnoringLocalCacheData // To avoid 412
-
+            
+            let headers: HTTPHeaders = [
+                "Authorization": tokenString,
+                "Content-Type": "application/json"]
+            
+            configuration.httpAdditionalHeaders = headers
+            configuration.requestCachePolicy = .reloadIgnoringCacheData
             
             let url = URL(string: "http://52.88.217.19/graphql")!
             
             return ApolloClient(networkTransport: HTTPNetworkTransport(url: url, configuration: configuration))
         }()
-
         
-     newApollo.cacheKeyForObject = { $0[self.currentUsedId!] }
-  
-        newApollo.fetch(query: StudentProfileQuery()) { (result, error) in
-            
-            self.profileDetailsTextView.text =  "Success"
-            
-            
-            if let error = error {
-                NSLog("Error while fetching query: \(error.localizedDescription)");
-                self.profileDetailsTextView.text =  error.localizedDescription
-            }
-            guard let result = result else {
-                NSLog("No query result");
-                self.profileDetailsTextView.text = "No query result"
-                return
-            }
-            
-            if let errors = result.errors {
-                NSLog("Errors in query result: \(errors)")
                 
-                self.profileDetailsTextView.text =  String(describing: errors)
-                
-            }
-            
-            guard let data = result.data else {
-                
-                NSLog("No query result data");
-                
-                return
-            }
-        }
-        
-    }
-    @IBAction func fetchProfileClicked(_ sender: Any) {
-        
-        //self.fetchStudentProfileDetails()
-        
-        
-        let configuration: URLSessionConfiguration = .default
-        configuration.httpAdditionalHeaders = ["Authorization": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJodHRwczovL2V4YW1wbGUuY29tIiwiYXVkIjoiVTJGc2RHVmtYMSt1ZUJRdXdJV3hOekk5TGxQOGdHMVZkRUNlcEJZVE5Ybz0iLCJpYXQiOjE1MDA0NTMyMDYsInN1YiI6IlNlc3Npb24ifQ.mb95cqBhm_EHfdHwi3yfWCmQNRLfmpzdYPDGDUm2F34"]
-        configuration.requestCachePolicy = .reloadIgnoringCacheData // To avoid 412
-        
-        let url = URL(string: "http://52.88.217.19/graphql")!
-        let new_apollo = ApolloClient(networkTransport: HTTPNetworkTransport(url: url, configuration: configuration))
-        new_apollo.cacheKeyForObject = { $0[self.currentUsedId!] }
- 
-        
         new_apollo.fetch(query: StudentProfileQuery()) { (result, error) in
-
+            
             if let error = error {
                 NSLog("Error while fetching query: \(error.localizedDescription)");
                 self.profileDetailsTextView.text =  error.localizedDescription
@@ -135,13 +76,46 @@ class SecondViewController: UIViewController {
                 
                 return
             }
-
-
+            
+            
         }
-
+        
     }
     
-    
+    @IBAction func fetchUsingAlamofireButtonClicked(_ sender: Any) {
+        
+        
+        let tokenString = "Bearer " + serverToken!
+        
+        let headers: HTTPHeaders = [
+            "Authorization": tokenString,
+            "Content-Type": "application/json"
+        ]
+        
+        
+        let paraDict:Dictionary = ["query":"{\n  me {\n    ... on Student {\n      profile {\n        fullName\n      }\n    }\n  }\n}\n"]
+        
+        Alamofire.request(graphQLEndPoint, method: HTTPMethod.post, parameters: paraDict,encoding: JSONEncoding.default, headers: headers).responseJSON {
+            response in
+            
+            switch(response.result) {
+            case .success(_):
+                if response.result.value != nil{
+                    print(response.result.value!)
+                    self.profileDetailsTextView.text = String(describing: response.result.value)
+                }
+                break
+                
+            case .failure(_):
+                print(response.result.error)
+                self.profileDetailsTextView.text = response.result.error! as! String
+                break
+            }
+            
+            debugPrint(response)
+        }
+        
+    }
     
     
     override func didReceiveMemoryWarning() {

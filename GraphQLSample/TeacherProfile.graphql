@@ -1,0 +1,12 @@
+query TeacherProfile{
+
+me{
+... on Teacher{
+
+profile{
+city
+}
+
+}
+}
+}

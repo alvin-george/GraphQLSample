@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		182382871F1F53A700F6D2F0 /* TeacherProfile.graphql in Resources */ = {isa = PBXBuildFile; fileRef = 182382861F1F53A700F6D2F0 /* TeacherProfile.graphql */; };
 		186C1CE61F1E1CD5009E0E85 /* API.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18BC77AD1F02842B0019E202 /* API.swift */; };
 		186C1CE71F1E1CF4009E0E85 /* AppExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18BC77A31F0277190019E202 /* AppExtension.swift */; };
 		186C1CE81F1E1CF7009E0E85 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18BC778B1F0273E10019E202 /* AppDelegate.swift */; };
@@ -22,6 +23,7 @@
 
 /* Begin PBXFileReference section */
 		0EC6FFB7500FFAB637DD2BEF /* Pods_GraphQLSample.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_GraphQLSample.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		182382861F1F53A700F6D2F0 /* TeacherProfile.graphql */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = TeacherProfile.graphql; sourceTree = "<group>"; };
 		186C1CDE1F1E08FE009E0E85 /* SecondViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SecondViewController.swift; sourceTree = "<group>"; };
 		186C1CF01F1E2188009E0E85 /* StudentProfile.graphql */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = StudentProfile.graphql; sourceTree = "<group>"; };
 		18BC77881F0273E10019E202 /* GraphQLSample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GraphQLSample.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -53,6 +55,13 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		182382C41F1F816000F6D2F0 /* TokenAuthentication */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = TokenAuthentication;
+			sourceTree = "<group>";
+		};
 		186C1CDD1F1E08ED009E0E85 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
@@ -83,6 +92,7 @@
 		18BC778A1F0273E10019E202 /* GraphQLSample */ = {
 			isa = PBXGroup;
 			children = (
+				182382C41F1F816000F6D2F0 /* TokenAuthentication */,
 				18BC778B1F0273E10019E202 /* AppDelegate.swift */,
 				18BC77B41F02934B0019E202 /* Schema */,
 				18BC77AF1F0286790019E202 /* GraphQL Files */,
@@ -120,6 +130,7 @@
 				186C1CF01F1E2188009E0E85 /* StudentProfile.graphql */,
 				18BC77B21F0287BC0019E202 /* Signup.graphql */,
 				18BC77B51F0297D70019E202 /* Login.graphql */,
+				182382861F1F53A700F6D2F0 /* TeacherProfile.graphql */,
 			);
 			name = "GraphQL Files";
 			sourceTree = "<group>";
@@ -217,6 +228,7 @@
 				186C1CEE1F1E214A009E0E85 /* LaunchScreen.storyboard in Resources */,
 				186C1CED1F1E2146009E0E85 /* Assets.xcassets in Resources */,
 				186C1CF11F1E2188009E0E85 /* StudentProfile.graphql in Resources */,
+				182382871F1F53A700F6D2F0 /* TeacherProfile.graphql in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
