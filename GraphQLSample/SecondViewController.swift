@@ -40,7 +40,7 @@ class SecondViewController: UIViewController {
             
             let headers: HTTPHeaders = [
                 "Authorization": tokenString,
-                "Content-Type": "application/json"]
+                "Content-Type": "application/graphql"]
             
             configuration.httpAdditionalHeaders = headers
             configuration.requestCachePolicy = .reloadIgnoringCacheData
@@ -50,6 +50,7 @@ class SecondViewController: UIViewController {
             return ApolloClient(networkTransport: HTTPNetworkTransport(url: url, configuration: configuration))
         }()
         
+        new_apollo.cacheKeyForObject = { $0["id"] }
                 
         new_apollo.fetch(query: StudentProfileQuery()) { (result, error) in
             
