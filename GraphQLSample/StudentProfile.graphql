@@ -1,31 +1,17 @@
 
-query StudentProfile {
+query StudentProfile{
 
 me{
+... on Student{
 
-... on Student {
-profile {
-
-
-fullName
-emailId
-mobileNumber
-civilId
-address
-city
-state
-country
-zipCode
-userProfilePic
-userCategory
-createdAt
-updatedAt
+profile{
+ city
 }
 
 }
 }
-
 }
+
 
 
 

@@ -53,16 +53,18 @@ class SecondViewController: UIViewController {
         let newApollo: ApolloClient = {
             let configuration = URLSessionConfiguration.default
             // Add additional headers as needed
-            configuration.httpAdditionalHeaders = ["Authorization": tokenString]
+            configuration.httpAdditionalHeaders = ["Authorization": "Bearer \(serverToken)"]
+            configuration.requestCachePolicy = .reloadIgnoringLocalCacheData // To avoid 412
+
             
             let url = URL(string: "http://52.88.217.19/graphql")!
             
             return ApolloClient(networkTransport: HTTPNetworkTransport(url: url, configuration: configuration))
         }()
+
         
-        newApollo.cacheKeyForObject = { $0[self.currentUsedId!] }
-        
-        
+     newApollo.cacheKeyForObject = { $0[self.currentUsedId!] }
+  
         newApollo.fetch(query: StudentProfileQuery()) { (result, error) in
             
             self.profileDetailsTextView.text =  "Success"
@@ -96,8 +98,51 @@ class SecondViewController: UIViewController {
     }
     @IBAction func fetchProfileClicked(_ sender: Any) {
         
-        self.fetchStudentProfileDetails()
+        //self.fetchStudentProfileDetails()
+        
+        
+        let configuration: URLSessionConfiguration = .default
+        configuration.httpAdditionalHeaders = ["Authorization": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJodHRwczovL2V4YW1wbGUuY29tIiwiYXVkIjoiVTJGc2RHVmtYMSt1ZUJRdXdJV3hOekk5TGxQOGdHMVZkRUNlcEJZVE5Ybz0iLCJpYXQiOjE1MDA0NTMyMDYsInN1YiI6IlNlc3Npb24ifQ.mb95cqBhm_EHfdHwi3yfWCmQNRLfmpzdYPDGDUm2F34"]
+        configuration.requestCachePolicy = .reloadIgnoringCacheData // To avoid 412
+        
+        let url = URL(string: "http://52.88.217.19/graphql")!
+        let new_apollo = ApolloClient(networkTransport: HTTPNetworkTransport(url: url, configuration: configuration))
+        new_apollo.cacheKeyForObject = { $0[self.currentUsedId!] }
+ 
+        
+        new_apollo.fetch(query: StudentProfileQuery()) { (result, error) in
+
+            if let error = error {
+                NSLog("Error while fetching query: \(error.localizedDescription)");
+                self.profileDetailsTextView.text =  error.localizedDescription
+            }
+            guard let result = result else {
+                NSLog("No query result");
+                self.profileDetailsTextView.text = "No query result"
+                return
+            }
+            
+            if let errors = result.errors {
+                NSLog("Errors in query result: \(errors)")
+                
+                self.profileDetailsTextView.text =  String(describing: errors)
+                
+            }
+            
+            guard let data = result.data else {
+                
+                NSLog("No query result data");
+                
+                return
+            }
+
+
+        }
+
     }
+    
+    
+    
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
